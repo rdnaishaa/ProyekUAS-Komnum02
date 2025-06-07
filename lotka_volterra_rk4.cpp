@@ -69,35 +69,35 @@ void rungeKutta4(const ModelParameters& modelParams, const SimulationParameters&
     double x = simParams.x0;
     double y = simParams.y0;
     
-    // Buka file output
+    // Membuka file output
     std::ofstream outFile(simParams.outputFile);
     if (!outFile.is_open()) {
         std::cerr << "Error: Tidak dapat membuka file output!" << std::endl;
         return;
     }
     
-    // Tulis header file
+    // Menulis header file
     outFile << "t,x,y" << std::endl;
     
-    // Tulis kondisi awal
+    // Menulis kondisi awal
     outFile << std::fixed << std::setprecision(6);
     outFile << t << "," << x << "," << y << std::endl;
     
     // Iterasi metode Runge-Kutta
     while (t < simParams.tMax) {
-        // Hitung k1
+        // Menghitung k1
         double k1x = simParams.h * dxdt(t, x, y, modelParams);
         double k1y = simParams.h * dydt(t, x, y, modelParams);
         
-        // Hitung k2
+        // Menghitung k2
         double k2x = simParams.h * dxdt(t + simParams.h/2, x + k1x/2, y + k1y/2, modelParams);
         double k2y = simParams.h * dydt(t + simParams.h/2, x + k1x/2, y + k1y/2, modelParams);
         
-        // Hitung k3
+        // Menghitung k3
         double k3x = simParams.h * dxdt(t + simParams.h/2, x + k2x/2, y + k2y/2, modelParams);
         double k3y = simParams.h * dydt(t + simParams.h/2, x + k2x/2, y + k2y/2, modelParams);
         
-        // Hitung k4
+        // Menghitung k4
         double k4x = simParams.h * dxdt(t + simParams.h, x + k3x, y + k3y, modelParams);
         double k4y = simParams.h * dydt(t + simParams.h, x + k3x, y + k3y, modelParams);
         
@@ -108,11 +108,11 @@ void rungeKutta4(const ModelParameters& modelParams, const SimulationParameters&
         // Update waktu
         t += simParams.h;
         
-        // Tulis hasil ke file
+        // Menulis hasil ke file
         outFile << t << "," << x << "," << y << std::endl;
     }
     
-    // Tutup file
+    // Menutup file
     outFile.close();
     
     std::cout << "Simulasi selesai. Hasil disimpan di " << simParams.outputFile << std::endl;
@@ -131,13 +131,13 @@ void analyzeResults(const std::string& filename) {
     }
     
     std::string header;
-    std::getline(inFile, header); // Baca header
+    std::getline(inFile, header); // Membaca header
     
     std::vector<double> times, preyPop, predatorPop;
     double t, x, y;
     char comma;
     
-    // Baca data dari file
+    // Membaca data dari file
     while (inFile >> t >> comma >> x >> comma >> y) {
         times.push_back(t);
         preyPop.push_back(x);
@@ -146,7 +146,7 @@ void analyzeResults(const std::string& filename) {
     
     inFile.close();
     
-    // Cari nilai maksimum dan minimum
+    // Mencari nilai maksimum dan minimum
     double maxPrey = preyPop[0], minPrey = preyPop[0];
     double maxPred = predatorPop[0], minPred = predatorPop[0];
     
@@ -158,7 +158,7 @@ void analyzeResults(const std::string& filename) {
         if (predatorPop[i] < minPred) minPred = predatorPop[i];
     }
     
-    // Hitung rata-rata
+    // Menghitung rata-rata
     double avgPrey = 0.0, avgPred = 0.0;
     for (size_t i = 0; i < preyPop.size(); ++i) {
         avgPrey += preyPop[i];
@@ -167,7 +167,7 @@ void analyzeResults(const std::string& filename) {
     avgPrey /= preyPop.size();
     avgPred /= predatorPop.size();
     
-    // Tampilkan hasil analisis
+    // Menampilkan hasil analisis
     std::cout << "\nAnalisis Hasil Simulasi:" << std::endl;
     std::cout << "------------------------" << std::endl;
     std::cout << "Populasi Prey:" << std::endl;
@@ -208,7 +208,7 @@ void analyzeResults(const std::string& filename) {
 }
 
 int main() {
-    // Definisikan parameter model
+    // Mendefinisikan parameter model
     ModelParameters modelParams = {
         1.0,  // a: laju pertumbuhan prey
         0.5,  // b: efisiensi predasi
@@ -216,7 +216,7 @@ int main() {
         0.25  // d: efisiensi konversi
     };
     
-    // Definisikan parameter simulasi
+    // Mendefinisikan parameter simulasi
     SimulationParameters simParams = {
         10.0,           // x0: populasi awal prey
         5.0,            // y0: populasi awal predator
@@ -225,7 +225,7 @@ int main() {
         "lotka_volterra_results.csv" // outputFile: nama file output
     };
     
-    // Tampilkan informasi simulasi
+    // Menampilkan informasi simulasi
     std::cout << "Simulasi Model Lotka-Volterra dengan Metode Runge-Kutta Orde-4" << std::endl;
     std::cout << "=============================================================" << std::endl;
     std::cout << "Parameter Model:" << std::endl;
@@ -250,4 +250,3 @@ int main() {
     
     return 0;
 }
-
