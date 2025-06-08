@@ -238,6 +238,6 @@ Proyek ini dilisensikan di bawah [Lisensi MIT](LICENSE).
 
 ## Referensi
 
-1. S. Chapra and R. Canale, “Numerical Methods for Engineers SEVENTH EDITION,” June 2025. Available: https://gdcboysang.ac.in/About/Droid/uploads/Numerical%20Method s.pdf
+1. S. Chapra and R. Canale, “Numerical Methods for Engineers SEVENTH EDITION,” June 2025. Available: https://gdcboysang.ac.in/About/Droid/uploads/Numerical%20Methods.pdf
 
 ---
