@@ -238,6 +238,6 @@ Proyek ini dilisensikan di bawah [Lisensi MIT](LICENSE).
 
 ## Referensi
 
-1. Chapra, S. C., & Canale, R. P. (2015). *Numerical Methods for Engineers* (7th ed.). McGraw-Hill Education.
+1. S. Chapra and R. Canale, “Numerical Methods for Engineers SEVENTH EDITION,” June 2025. Available: https://gdcboysang.ac.in/About/Droid/uploads/Numerical%20Method s.pdf
 
 ---
