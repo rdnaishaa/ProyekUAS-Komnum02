@@ -1,4 +1,4 @@
-# PROYEK UAS KOMNUM-02
+# PROYEK UAS 
 
 # Implementasi Metode Runge-Kutta Orde-4 untuk Model Lotka-Volterra
 
@@ -7,6 +7,14 @@
 [![Python](https://img.shields.io/badge/Python-3.x-green.svg)](https://python.org/)
 
 *Simulasi dinamika populasi predator-prey menggunakan metode numerik canggih*
+
+---
+
+## Tentang Proyek
+
+**Dibuat oleh**: R. Aisha Syauqi Ramadhani (2306250554)  
+**Mata Kuliah**: Komputasi Numerik-02  
+**Universitas**: Universitas Indonesia  
 
 ---
 
@@ -219,14 +227,6 @@ Model Lotka-Volterra klasik memiliki sifat konservatif, dengan kuantitas yang di
 $$E = dx - c\ln(x) + by - a\ln(y)$$
 
 **Nilai E tetap konstan** sepanjang orbit dalam ruang fase, yang menjelaskan mengapa solusi membentuk kurva tertutup.
-
----
-
-## Tentang Proyek
-
-**Dibuat oleh**: R. Aisha Syauqi Ramadhani (2306250554)  
-**Mata Kuliah**: Komputasi Numerik  
-**Universitas**: Universitas Indonesia  
 
 ---
 
